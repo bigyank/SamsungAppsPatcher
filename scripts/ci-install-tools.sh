@@ -25,7 +25,14 @@ fi
 
 yes | sdkmanager --licenses >/dev/null 2>&1 || true
 sdkmanager "platform-tools" "build-tools;34.0.0"
-export PATH="$ANDROID_HOME/build-tools/34.0.0:$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/build-tools/34.0.0:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+
+if [[ -n "${GITHUB_ENV:-}" ]]; then
+  {
+    echo "ANDROID_HOME=$ANDROID_HOME"
+    echo "PATH=$PATH"
+  } >> "$GITHUB_ENV"
+fi
 
 for cmd in apktool zipalign apksigner python3 patch; do
   command -v "$cmd" >/dev/null || { echo "Missing $cmd after setup" >&2; exit 1; }
