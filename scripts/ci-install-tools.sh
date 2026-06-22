@@ -7,9 +7,12 @@ export ANDROID_HOME
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 
 if ! command -v apktool >/dev/null; then
-  APKTOOL_VERSION="${APKTOOL_VERSION:-2.9.3}"
-  curl -fsSL "https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool/apktool" -o /usr/local/bin/apktool
+  APKTOOL_VERSION="${APKTOOL_VERSION:-2.11.1}"
   curl -fsSL "https://github.com/iBotPeaches/Apktool/releases/download/v${APKTOOL_VERSION}/apktool_${APKTOOL_VERSION}.jar" -o /usr/local/bin/apktool.jar
+  cat > /usr/local/bin/apktool <<'EOF'
+#!/usr/bin/env bash
+exec java -jar /usr/local/bin/apktool.jar "$@"
+EOF
   chmod +x /usr/local/bin/apktool /usr/local/bin/apktool.jar
 fi
 
