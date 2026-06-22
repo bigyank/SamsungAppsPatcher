@@ -9,6 +9,19 @@ This is a guide to patch galaxy wearable apps to work on a modified samsung phon
 | As I've moved on from having a Samsung phone and Samsung accessories, I will no longer be maintaining this project. |
 | ------------------------------------------------------------ |
 
+### Community fork (bigyank)
+
+This fork targets **Knox-tripped Samsung phones** (warranty bit 0x1) that are currently unrooted — the case where stock Samsung Health blocks setup after a past root/flash.
+
+| Method | Best for |
+|--------|----------|
+| **PC patcher** (this repo) | Pre-built APKs, full wearable suite, macOS/Linux scripts |
+| **[Morphe patches](https://github.com/bigyank/morphe-patches-samsung)** | On-device patching with [Morphe Manager](https://github.com/MorpheApp/morphe-manager) — no PC, no custom keystore |
+
+**Morphe (recommended for Health-only):** [Add patch source](https://morphe.software/add-source?github=bigyank/morphe-patches-samsung) → enable **both** default patches → set process runtime **1280 MB** → patch Samsung Health **6.32.0.001**. Latest: [v1.0.16](https://github.com/bigyank/morphe-patches-samsung/releases/latest). Galaxy Wearable / watch plugins remain in this PC repo — see [AUDIT.md](https://github.com/bigyank/morphe-patches-samsung/blob/main/AUDIT.md).
+
+**PC:** Samsung Health 6.32+ uses `patches/apply_shealth_knox_bypass.py` (KnoxAdapter / KnoxControl / SAK stubs). Tested working on Knox 0x1 without root.
+
 ## March 2023 update
 
 There's a new project that could supercede this one: https://github.com/BlackMesa123/KnoxPatch.
