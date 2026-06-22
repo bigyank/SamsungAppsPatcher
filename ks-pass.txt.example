@@ -1,0 +1,4 @@
+# Copy to ks-pass.txt (two lines: store password, key password).
+# For CI, use KEYSTORE_STORE_PASS / KEYSTORE_KEY_PASS secrets instead.
+your-store-password
+your-key-password

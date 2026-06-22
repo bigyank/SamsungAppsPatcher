@@ -1,0 +1,26 @@
+{
+  "release_tag_prefix": "apks-",
+  "apps": {
+    "shealth": {
+      "version": "6.32.0.001",
+      "package": "com.sec.android.app.shealth",
+      "patch_script": "patch-shealth-632.sh",
+      "artifact_name": "Samsung-Health-{version}-patched.apk",
+      "apk_url_secret": "SHEALTH_APK_URL"
+    },
+    "wearable": {
+      "version": "2.2.59.24061361",
+      "package": "com.samsung.android.app.watchmanager",
+      "patch_script": "wearable-patcher.sh",
+      "artifact_name": "Galaxy-Wearable-{version}-patched.apk",
+      "apk_url_secret": "WEARABLE_APK_URL"
+    },
+    "accessoryservice": {
+      "version": "1.0.00.19",
+      "package": "com.samsung.accessory",
+      "patch_script": "wearable-patcher.sh",
+      "artifact_name": "Samsung-Accessory-Service-{version}-patched.apk",
+      "apk_url_secret": "ACCESSORYSERVICE_APK_URL"
+    }
+  }
+}

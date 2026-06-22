@@ -1,2 +1,6 @@
 decompiled/
 patched/
+release-artifacts/
+originals/*.apk
+keystore.jks
+ks-pass.txt

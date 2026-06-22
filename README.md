@@ -22,6 +22,10 @@ This fork targets **Knox-tripped Samsung phones** (warranty bit 0x1) that are cu
 
 **PC:** Samsung Health 6.32+ uses `patches/apply_shealth_knox_bypass.py` (KnoxAdapter / KnoxControl / SAK stubs). Tested working on Knox 0x1 without root.
 
+### Pre-built APKs (Obtainium)
+
+CI can build signed patched APKs and publish them to [GitHub Releases](https://github.com/bigyank/SamsungAppsPatcher/releases). Install with [Obtainium](https://github.com/ImranR98/Obtainium) — see **[OBTAINIUM.md](./OBTAINIUM.md)** for add-source URL, asset filters, and maintainer secrets setup.
+
 ## March 2023 update
 
 There's a new project that could supercede this one: https://github.com/BlackMesa123/KnoxPatch.
